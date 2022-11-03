@@ -1,0 +1,89 @@
+<head>
+
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function timestamp() {
+            var response = document.getElementById("g-recaptcha-response");
+            if (response == null || response.value.trim() == "") {
+                var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+                elems["ts"] = JSON.stringify(new Date().getTime());
+                document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+            }
+        }
+        setInterval(timestamp, 500);
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+    </script>
+    <script src="../formJS.js"></script>
+    <link href="../CSS.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<div class="container">
+    <span class="error animated tada" id="msg"></span>
+
+    <form name="form1" class="box" onsubmit="return checkStuff()" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+        <input type=hidden name="oid" value="00D5h000006JWtC">
+        <input type=hidden name="retURL" value="http://google.com">
+
+        <h4>Success<span>Motors</span></h4>
+        <h5>Create new Lead</h5>
+
+        <input id="company" maxlength="40" name="company" size="20" type="text" placeholder="Company name" autocomplete="off" />
+
+        <input id="first_name" maxlength="40" name="first_name" size="20" type="text" placeholder="First name" autocomplete="off" />
+
+        <input id="last_name" maxlength="40" name="last_name" size="20" type="text" placeholder="Last name" autocomplete="off" />
+
+        <input type="text" name="email" placeholder="Email" autocomplete="off">
+
+        <input id="phone" maxlength="40" name="phone" size="20" type="tel" placeholder="Phone" autocomplete="off" />
+
+        <select id="00N5h00000CNKJ6" name="00N5h00000CNKJ6" title="Products" placeholder="Product" autocomplete="off" class="required">
+        <option value="" autocomplete="off" disabled="disabled">Choose Product</option>
+        <option value="VAG001C1y" autocomplete="off" >Volkswagen Polo Sedan</option>
+        <option value="VAG002C2" autocomplete="off">Volkswagen Polo 2021</option>
+        <option value="L004E2" autocomplete="off">VAZ-21129</option>
+        <option value="L003E1" autocomplete="off">VAZ-21179</option>
+        <option value="VAG003C3" autocomplete="off">Skoda Rapid</option>
+        <option value="R004C4" autocomplete="off">Renault Sandero Stepway</option>
+        <option value="R003C3" autocomplete="off">Renault Sandero</option>
+        <option value="R002C2" autocomplete="off">Renault Logan Stepway</option>
+        <option value="R001C1" autocomplete="off">Renault Logan</option>
+        <option value="MI001A1" autocomplete="off">Phone holder Xiaomi</option>
+        <option value="L002C2" autocomplete="off">Lada Xray</option>
+        <option value="L001C1" autocomplete="off">Lada Vesta</option>
+        <option value="HK002C2" autocomplete="off">Kia Rio X-Line</option>
+        <option value="HK001C1" autocomplete="off">Kia Rio</option>
+        <option value="R005E1" autocomplete="off">K7M</option>
+        <option value="R006E2" autocomplete="off">K4M</option>
+        <option value="HK004C4" autocomplete="off">Hyundai Solaris</option>
+        <option value="HK003C3" autocomplete="off">Hyundai Accent</option>
+        <option value="R007E3" autocomplete="off">H4M</option>
+        <option value="HK005E1" autocomplete="off">G4LC</option>
+        <option value="HK006E2" autocomplete="off">G4FG</option>
+        <option value="VAG004E1" autocomplete="off">CZCA</option>
+        <option value="VAG006E3" autocomplete="off">CWVA</option>
+        <option value="VAG005E2" autocomplete="off">CFW</option>
+        <option value="VAG008E5" autocomplete="off">CFNB</option>
+        <option value="VAG007E4" autocomplete="off">CFNA</option>
+        <option value="VAG009A1" autocomplete="off">Carpets Volkswagen</option>
+        <option value="VAG010A2" autocomplete="off">Carpets Skoda</option>
+        <option value="R008A1" autocomplete="off">Carpets Renault</option>
+        <option value="L005A1" autocomplete="off">Carpets Lada</option>
+        <option value="HK008A2" autocomplete="off">Carpets Kia</option>
+        <option value="HK007A1" autocomplete="off">Carpets Hyundai</option>
+        </select>
+
+        <div class="g-recaptcha" data-sitekey="6LcI0JIiAAAAAEaXXj9tcAClYggE6um3fxnVk2op"></div><br>
+
+
+        <input type="submit" value="Submit" class="btn1">
+
+    </form>
+
+</div>
